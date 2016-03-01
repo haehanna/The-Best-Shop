@@ -1,0 +1,1 @@
+module.exports = {port:80,host:'http://54.191.201.222',db:'production'}

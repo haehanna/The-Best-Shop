@@ -1,3 +1,10 @@
+try{
+	var env = require('./config/env_dev');
+}
+catch(err){
+	var env = require('./config/env_prod');
+}
+
 var models = require("./models");
 var express = require("express");
 var bodyParser = require("body-parser");
@@ -23,8 +30,8 @@ app.use('/api/orders',order_routes);
 
 //start server and database
 models.sequelize.sync().then(function(){
-	app.listen(8080,function(){
-		console.log('Listening on http://localhost:8080');
+	app.listen(env.port,function(){
+		console.log('Listening on '+env.host+':'+env.port);
 		console.log('Stop Server With CTRL + C');
 	});
 })

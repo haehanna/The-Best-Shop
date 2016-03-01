@@ -3,7 +3,7 @@ app.service('api', ApiService);
 function ApiService($http) {
   this.http = $http;
   //constants
-  this.BASE_URL = 'http://localhost:8080/api';
+  this.BASE_URL = 'http://54.191.201.222/api';
 }
 ApiService.prototype.request = function(endpoint,data,method) {
 
